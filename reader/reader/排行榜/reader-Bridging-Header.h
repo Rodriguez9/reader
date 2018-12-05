@@ -4,4 +4,5 @@
 
 #import "LeaderboardModel.h"
 #import "LeaderboardDetailModel.h"
-
+#import "CategoryModel.h"
+#import "CategoryDetailModel.h"

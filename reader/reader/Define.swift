@@ -27,3 +27,5 @@ let IMAGE_PRE = "http://statics.zhuishushenqi.com"
 
 let API_LEADERBOARD_BOOK = API_HOST+"/ranking"
 
+//书籍分类
+let API_BOOKCATEGORY = API_HOST+"/cats/lv2/statistics"

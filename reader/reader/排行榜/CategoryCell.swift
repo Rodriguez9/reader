@@ -17,11 +17,13 @@ class CategoryCell: UITableViewCell {
     var _second : UILabel?
     var _leaderDetailModel : LeaderboardDetailModel!{
         didSet{
+            let bookNameArr = _leaderDetailModel.book_name.components(separatedBy: " ")
+            
             let url = URL(string: String(format: "%@%@", IMAGE_PRE,(_leaderDetailModel?.coverImgUrl)!))
             self._icon?.sd_setImage(with: url)
             self._title?.text = _leaderDetailModel!.rankName
-            self._first?.text = _leaderDetailModel!.book_name
-            //self._second?.text = _leaderDetailModel!.rankid
+            self._first?.text = bookNameArr.first
+            self._second?.text = bookNameArr.rx_objectAtIndex(index: 1) as! String
         }
     }
     
@@ -57,17 +59,23 @@ extension CategoryCell{
         
         //标题
         let title = UILabel()
-        title.font = UIFont.systemFont(ofSize: 13)
+        title.font = UIFont.systemFont(ofSize: 9)
         title.textColor = UIColor.black
         self.contentView.addSubview(title)
         _title = title
         
         //第一名的书
         let first = UILabel()
-        title.font = UIFont.systemFont(ofSize: 9)
-        title.textColor = UIColor.lightGray
+        first.font = UIFont.systemFont(ofSize: 13)
+        first.textColor = UIColor.lightGray
         self.contentView.addSubview(first)
         _first = first
+        
+        let second = UILabel()
+        second.font = UIFont.systemFont(ofSize: 13)
+        second.textColor = UIColor.lightGray
+        self.contentView.addSubview(second)
+        _second = second
         
         setConstaints()
     }
@@ -90,6 +98,12 @@ extension CategoryCell{
             make.left.equalTo()(self._icon?.mas_right)?.offset()(20)
             make.right.equalTo()(self.contentView)?.offset()(-30)
         })
+        
+        _second?.mas_makeConstraints({ (make:MASConstraintMaker!) in
+            make.top.equalTo()(self._first?.mas_bottom)?.offset()(10)
+            make.left.equalTo()(self._icon?.mas_right)?.offset()(20)
+            make.right.equalTo()(self.contentView)?.offset()(-30)
+        })
     }
     
     func setLeaderDetailModel(leaderDetailModel:LeaderboardDetailModel){
@@ -98,3 +112,5 @@ extension CategoryCell{
     }
     
 }
+
+

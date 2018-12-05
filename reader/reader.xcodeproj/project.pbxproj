@@ -23,6 +23,9 @@
 		03A16C5221A96041002AA53D /* Define.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A16C4721A96041002AA53D /* Define.swift */; };
 		03A16C5321A96041002AA53D /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A16C4921A96041002AA53D /* CategoryCell.swift */; };
 		03A16C5421A96041002AA53D /* oneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A16C4A21A96041002AA53D /* oneViewController.swift */; };
+		270DBE8C21B83B1800905737 /* CategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 270DBE8B21B83B1800905737 /* CategoryModel.m */; };
+		270DBE8F21B83B3500905737 /* CategoryDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 270DBE8E21B83B3500905737 /* CategoryDetailModel.m */; };
+		27AB0CB221B82D4000A12DD8 /* NSArray+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AB0CB121B82D3F00A12DD8 /* NSArray+Extension.swift */; };
 		27D4ACC321B43FFF00674DD8 /* LeaderboardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D4ACC221B43FFF00674DD8 /* LeaderboardModel.m */; };
 		27D4ACC621B447D400674DD8 /* LeaderboardDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D4ACC521B447D400674DD8 /* LeaderboardDetailModel.m */; };
 		7EC060877051D9C569B169BE /* Pods_reader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86E22790637929C0538312A4 /* Pods_reader.framework */; };
@@ -47,6 +50,12 @@
 		03A16C4721A96041002AA53D /* Define.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Define.swift; sourceTree = "<group>"; };
 		03A16C4921A96041002AA53D /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		03A16C4A21A96041002AA53D /* oneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = oneViewController.swift; sourceTree = "<group>"; };
+		270DBE8921B83A4B00905737 /* RXConst_API.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RXConst_API.h; path = "../../../../../Desktop/RX_IOS_BOOK/RXBookRead/RXBookRead/PL/Other(其它)/Const/RXConst_API.h"; sourceTree = "<group>"; };
+		270DBE8A21B83B1800905737 /* CategoryModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryModel.h; sourceTree = "<group>"; };
+		270DBE8B21B83B1800905737 /* CategoryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryModel.m; sourceTree = "<group>"; };
+		270DBE8D21B83B3500905737 /* CategoryDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryDetailModel.h; sourceTree = "<group>"; };
+		270DBE8E21B83B3500905737 /* CategoryDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryDetailModel.m; sourceTree = "<group>"; };
+		27AB0CB121B82D3F00A12DD8 /* NSArray+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSArray+Extension.swift"; sourceTree = "<group>"; };
 		27D4ACC021B43FFF00674DD8 /* reader-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "reader-Bridging-Header.h"; sourceTree = "<group>"; };
 		27D4ACC121B43FFF00674DD8 /* LeaderboardModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeaderboardModel.h; sourceTree = "<group>"; };
 		27D4ACC221B43FFF00674DD8 /* LeaderboardModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeaderboardModel.m; sourceTree = "<group>"; };
@@ -99,6 +108,7 @@
 		03A16C2B21A96021002AA53D /* reader */ = {
 			isa = PBXGroup;
 			children = (
+				270DBE8921B83A4B00905737 /* RXConst_API.h */,
 				0366948621AD2C6F009E069E /* HTTP */,
 				03A16C4821A96041002AA53D /* 排行榜 */,
 				03A16C4321A96041002AA53D /* 分类 */,
@@ -130,6 +140,10 @@
 			children = (
 				03A16C4421A96041002AA53D /* collectionViewCell.swift */,
 				03A16C4521A96041002AA53D /* twoViewController.swift */,
+				270DBE8A21B83B1800905737 /* CategoryModel.h */,
+				270DBE8B21B83B1800905737 /* CategoryModel.m */,
+				270DBE8D21B83B3500905737 /* CategoryDetailModel.h */,
+				270DBE8E21B83B3500905737 /* CategoryDetailModel.m */,
 			);
 			path = "分类";
 			sourceTree = "<group>";
@@ -144,6 +158,7 @@
 				27D4ACC021B43FFF00674DD8 /* reader-Bridging-Header.h */,
 				27D4ACC421B447D400674DD8 /* LeaderboardDetailModel.h */,
 				27D4ACC521B447D400674DD8 /* LeaderboardDetailModel.m */,
+				27AB0CB121B82D3F00A12DD8 /* NSArray+Extension.swift */,
 			);
 			path = "排行榜";
 			sourceTree = "<group>";
@@ -294,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27AB0CB221B82D4000A12DD8 /* NSArray+Extension.swift in Sources */,
 				27D4ACC621B447D400674DD8 /* LeaderboardDetailModel.m in Sources */,
 				0366948521AD2661009E069E /* APIManager.swift in Sources */,
 				27D4ACC321B43FFF00674DD8 /* LeaderboardModel.m in Sources */,
@@ -302,7 +318,9 @@
 				03A16C5221A96041002AA53D /* Define.swift in Sources */,
 				03A16C4E21A96041002AA53D /* threeViewController.swift in Sources */,
 				03A16C2F21A96021002AA53D /* ViewController.swift in Sources */,
+				270DBE8C21B83B1800905737 /* CategoryModel.m in Sources */,
 				03A16C5021A96041002AA53D /* twoViewController.swift in Sources */,
+				270DBE8F21B83B3500905737 /* CategoryDetailModel.m in Sources */,
 				03A16C5421A96041002AA53D /* oneViewController.swift in Sources */,
 				03A16C4B21A96041002AA53D /* MoreCell.swift in Sources */,
 				03A16C4F21A96041002AA53D /* collectionViewCell.swift in Sources */,

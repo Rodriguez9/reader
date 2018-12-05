@@ -11,6 +11,7 @@ import UIKit
 class twoViewController: UIViewController {
     
     static let cellID : String = "cellID"
+    var categories : NSArray = NSArray.init()
     
     lazy var layout : UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
@@ -39,6 +40,19 @@ class twoViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
         view.addSubview(collect)
+        loadData()
+    }
+}
+
+extension twoViewController{
+   @objc func loadData(){
+        weak var weakself = self
+        APIManager.getBookDetailWithBookId(success: { (categoryModel:CategoryModel!) in
+            weakself?.categories = categoryModel.male! as NSArray
+            weakself?.collect.reloadData()
+        }) { (error:Error?) in
+            
+        }
     }
 }
 
@@ -48,15 +62,26 @@ extension twoViewController : UICollectionViewDelegate{
 
 extension twoViewController : UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 50
+        return self.categories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let categoryDetailModel = self.categories.object(at: indexPath.row) as! CategoryDetailModel
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: twoViewController.cellID, for: indexPath) as! collectionViewCell
-        cell.igv.image = UIImage.init(named: "1")
-        cell.title.text = "123"
+        cell._categoryDetailModel=categoryDetailModel
         return cell
     }
-    
+    /*
+     
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     let leaderDetailModel = self.leaderboards.object(at: indexPath.row) as! LeaderboardDetailModel
+     let cell = tableView.dequeueReusableCell(withIdentifier: oneViewController.cellID, for: indexPath) as! CategoryCell
+     cell._leaderDetailModel = leaderDetailModel
+     
+     return cell
+     }
+     
+     */
     
 }

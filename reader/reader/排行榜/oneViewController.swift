@@ -40,7 +40,7 @@ extension oneViewController:UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let leaderDetailModel = self.leaderboards.objectAtIndex(index: indexPath.row) as! LeaderboardDetailModel
+        let leaderDetailModel = self.leaderboards.object(at: indexPath.row) as! LeaderboardDetailModel
         let cell = tableView.dequeueReusableCell(withIdentifier: oneViewController.cellID, for: indexPath) as! CategoryCell
         cell._leaderDetailModel = leaderDetailModel
         
@@ -77,12 +77,12 @@ extension oneViewController{
         })
     }
 }
-
 extension NSArray{
     func objectAtIndex(index:Int) -> Any? {
         if self.count > index{
-            return self.object(at: index)
+            return self.objectAtIndex(index: index)
         }
         return nil
     }
 }
+

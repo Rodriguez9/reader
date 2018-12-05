@@ -22,4 +22,15 @@ class APIManager: NSObject {
         }
    }
     
+    class func getBookDetailWithBookId(success:@escaping (_ categoryModel : CategoryModel?) -> Void,failure:@escaping (_ error:Error?) -> Void){
+        NetworkManager.getWithURL(url: API_BOOKCATEGORY, params: [:], success: { (responseObject:Any) in
+            if (responseObject as AnyObject).isKind(of:NSDictionary.self){
+                let categoryModel = CategoryModel.mj_object(withKeyValues: responseObject)
+                success(categoryModel)
+            }
+        }) { (error:Error) in
+            failure(error)
+        }
+    }
+
 }
